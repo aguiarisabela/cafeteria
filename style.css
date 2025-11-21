@@ -241,6 +241,30 @@ body.show-mobile-menu .navbar .nav-menu {
     font-size: var(--font-size-g);
   }
 
+  /*responsividade da section de destaques*/
+
+  .primeira-section .section-conteudo {
+    gap: 50px;
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px 20px;
+  }
+
+  .primeira-section .img-destaque{
+    max-width: 270px;
+    margin-right: 0;
+  }
+
+  /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque){
+    max-width: 100%;
+  }
+
+  .primeira-section .sec-destaque .buttons {
+    justify-content: center;
+  }
+
 }
 
 
