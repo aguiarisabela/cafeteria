@@ -173,6 +173,22 @@ header .navbar {
     --font-size-xgg: 1.8rem;
   }
 
+  /*
+ - Cria um 'overlay' (sobreposição) que escurece e desfoca o restante da página
+ - quando o menu mobile está aberto (quando a classe 'show-mobile-menu' está no <body>).
+*/
+  body.show-mobile-menu header::before{
+    content: ""; /* Necessário para renderizar */
+    position: fixed; /* Fica fixo na tela, não rola com o conteúdo */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px); /* Desfoca o conteúdo que está atrás deste overlay */
+    background: rgba(0,0,0,0.3); /* Fundo preto com 30% de transparência para escurecer a página */
+
+  }
+
   /* * Pseudo-classe :where():
  * - Agrupa os seletores de IDs para aplicar os mesmos estilos (ex: #menu-close-button, #menu-open-button).
  * - IMPORTANTE: Garante que a especificidade dos IDs agrupados seja zero (0,0,0,0) para esta regra.
@@ -209,11 +225,22 @@ header .navbar {
     align-items: center;
     padding-top: 100px;
     background-color: var(--light-color);
+    transition: left 0.3s ease; /* Animação suave ao abrir/fechar o menu */
   }
-  .navbar .nav-menu .nav-links {
+
+  /*Quando a classe show-mobile-menu for adicionada ao body, o menu desliza para dentro da tela*/
+body.show-mobile-menu .navbar .nav-menu {
+    left: 0;
+
+  }
+
+    .navbar .nav-menu .nav-links {
     color: var(--dark-color);
     display: block;
     margin-top: 17px;
     font-size: var(--font-size-g);
   }
+
 }
+
+
