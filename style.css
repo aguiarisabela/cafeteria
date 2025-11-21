@@ -63,15 +63,12 @@ header .navbar {
   padding: 20px 10%;
 }
 
-.navbar,
-.nav-menu {
+.navbar .nav-menu {
   display: flex;
   gap: 10px;
 }
 
-.navbar,
-.nav-logo,
-.texto-logo {
+.navbar .nav-logo .texto-logo {
   color: var(--light-color);
   font-size: var(--font-size-gg);
   font-weight: 600;
@@ -92,6 +89,10 @@ header .navbar {
   transition: 0.3s ease;
 }
 
+  .navbar :where(#menu-close-button, #menu-open-button){
+    display: none;
+  }
+
 /*Estilização da Section de Destaques*/
 .primeira-section {
   min-height: 100vh;
@@ -107,7 +108,7 @@ header .navbar {
   margin: 0 5%;
 }
 
-/*Quando se coloca as classes sem a vírgula, você irá aplicar o estilo dentro da ultima classe desejada, por exemplo, temos a primeira classe que é ".primeira-section" e dentro dela temos a ".section-destque" e dentro dela temos ".title-destaque", que é onde esse estilo será aplicado.*/
+/*Quando se coloca as classes sem a vírgula, você irá aplicar o estilo dentro da ultima classe desejada, por exemplo, temos a primeira classe que é ".primeira-section" e dentro dela temos a ".section-destque" e dentro desta temos ".title-destaque", que é onde esse estilo será aplicado.*/
 .primeira-section .sec-destaque .title-destaque {
   font-size: var(--font-size-xgg);
   color: var(--secondary-color);
@@ -140,23 +141,20 @@ header .navbar {
   transition: 0.3s ease;
 }
 
-
 .primeira-section .sec-destaque .button:hover,
-.primeira-section .sec-destaque .contate-nos
-{
+.primeira-section .sec-destaque .contate-nos {
   color: var(--light-color);
   border-color: var(--light-color);
   background-color: transparent;
 }
 
-.primeira-section .sec-destaque .contate-nos:hover{
+.primeira-section .sec-destaque .contate-nos:hover {
   border-color: var(--secondary-color);
   background: var(--secondary-color);
   color: var(--primary-color);
-  
 }
 
-.primeira-section .sec-destaque .buttons{
+.primeira-section .sec-destaque .buttons {
   display: flex;
   gap: 23px;
 }
@@ -164,4 +162,58 @@ header .navbar {
 .primeira-section .img-destaque {
   max-width: 500px;
   margin-right: 30px;
+}
+
+/*Responsividade com o tamanho de tela máxima de 900px*/
+@media screen and (max-width: 900px) {
+  :root {
+    --font-size-m: 1rem;
+    --font-size-g: 1.3rem;
+    --font-size-gg: 1.5rem;
+    --font-size-xgg: 1.8rem;
+  }
+
+  /* * Pseudo-classe :where():
+ * - Agrupa os seletores de IDs para aplicar os mesmos estilos (ex: #menu-close-button, #menu-open-button).
+ * - IMPORTANTE: Garante que a especificidade dos IDs agrupados seja zero (0,0,0,0) para esta regra.
+ * - Isso torna os estilos fáceis de serem sobrescritos por outras regras mais simples no futuro.
+*/
+  .navbar :where(#menu-close-button, #menu-open-button) {
+    display: block;
+    font-size: var(--font-size-g);
+  }
+
+  .navbar #menu-close-button {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    color: var(--primary-color);
+    background: none;
+  }
+
+  .navbar #menu-open-button {
+    color: var(--light-color);
+    background: none;
+  }
+
+  /*adiciona uma barra vertical na lateral esquerda, essa barra é branca*/
+  .navbar .nav-menu {
+    display: block;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    background-color: var(--light-color);
+  }
+  .navbar .nav-menu .nav-links {
+    color: var(--dark-color);
+    display: block;
+    margin-top: 17px;
+    font-size: var(--font-size-g);
+  }
 }
