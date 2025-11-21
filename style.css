@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/*define variáveis CSS personalizadas dentro do seletor :root. Essas variáveis facilitam a manutenção e reutilização de valores (como cores e bordas) em todo o arquivo CSS.*/
+:root {
+  /*cores*/
+  --primary-color: #3b141c;
+  --secondary-color: #f3961c;
+  --dark-color: #252525;
+  --light-color: #f5f5f5;
+  --medium-grey: #ccc;
+  --light-pink-color: #faf4f5;
+
+  /*bordas arredondadas*/
+  --border-radius-p: 8px;
+  --border-radius-m: 30px;
+  --border-radius-circulo: 50%;
+
+  /*tamanho das fontes*/
+  --font-size-pp: 0.9rem;
+  --font-size-p: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-g: 1.5rem;
+  --font-size-gg: 2rem;
+  --font-size-xgg: 2.3rem;
+}
+
+ul,
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  position: fixed; /* Mantém o menu sempre visível no topo da página, mesmo ao rolar o site */
+  width: 100%; /* Faz o cabeçalho ocupar toda a largura da tela */
+  z-index: 5; /* Garante que o cabeçalho fique acima de outros elementos sobrepostos */
+  background-color: var(
+    --primary-color
+  ); /*chama a variável CSS definida no ":root"*/
+}
+
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+.navbar,
+.nav-menu {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar,
+.nav-logo,
+.texto-logo {
+  color: var(--light-color);
+  font-size: var(--font-size-gg);
+  font-weight: 600;
+}
+
+.navbar,
+.nav-links,
+.nav-menu {
+  padding: 10px 18px;
+  color: var(--light-color);
+  font-size: var(--font-size-m);
+}
+
+.nav-links:hover {
+  border-radius: var(--border-radius-m);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transition: 0.3s ease;
+}
+
+/*Estilização da Section de Destaques*/
+.primeira-section {
+  min-height: 100vh;
+  background-color: var(--primary-color);
+}
+
+.primeira-section .section-conteudo {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--light-color);
+  justify-content: space-between;
+  margin: 0 5%;
+}
+
+/*Quando se coloca as classes sem a vírgula, você irá aplicar o estilo dentro da ultima classe desejada, por exemplo, temos a primeira classe que é ".primeira-section" e dentro dela temos a ".section-destque" e dentro dela temos ".title-destaque", que é onde esse estilo será aplicado.*/
+.primeira-section .sec-destaque .title-destaque {
+  font-size: var(--font-size-xgg);
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  font-family: "Miniver", sans-serif;
+}
+
+.primeira-section .sec-destaque .subtitulo-destaque {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  max-width: 70%;
+  font-size: var(--font-size-gg);
+  font-weight: 700;
+}
+
+.primeira-section .sec-destaque .decricao-destaque {
+  font-size: var(--font-size-m);
+  margin: 24px 0 40px;
+  max-width: 70%;
+  line-height: 1.5;
+}
+
+.primeira-section .sec-destaque .button {
+  padding: 10px 26px;
+  border: 2px solid transparent;
+  color: var(--primary-color);
+  border-radius: var(--border-radius-m);
+  background-color: var(--secondary-color);
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+
+.primeira-section .sec-destaque .button:hover,
+.primeira-section .sec-destaque .contate-nos
+{
+  color: var(--light-color);
+  border-color: var(--light-color);
+  background-color: transparent;
+}
+
+.primeira-section .sec-destaque .contate-nos:hover{
+  border-color: var(--secondary-color);
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  
+}
+
+.primeira-section .sec-destaque .buttons{
+  display: flex;
+  gap: 23px;
+}
+
+.primeira-section .img-destaque {
+  max-width: 500px;
+  margin-right: 30px;
+}
