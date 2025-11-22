@@ -89,9 +89,9 @@ header .navbar {
   transition: 0.3s ease;
 }
 
-  .navbar :where(#menu-close-button, #menu-open-button){
-    display: none;
-  }
+.navbar :where(#menu-close-button, #menu-open-button) {
+  display: none;
+}
 
 /*Estilização da Section de Destaques*/
 .primeira-section {
@@ -164,6 +164,75 @@ header .navbar {
   margin-right: 30px;
 }
 
+/*Estilização Sobre Nós*/
+.sobre-nos-section {
+  padding: 120px 0;
+  background-color: var(--light-pink-color);
+}
+
+.sobre-nos-section .section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10%;
+}
+
+.sobre-nos-section .img-sobre-nos-sec .sobre-nos-img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--border-radius-circulo);
+}
+
+.sobre-titulo {
+  text-align: center;
+  padding: 60px 0 100px;
+  text-transform: uppercase;
+  font-size: var(--font-size-gg);
+}
+
+/* Cria um pseudoelemento (uma linha decorativa) logo abaixo do título */
+.sobre-titulo::after {
+  content: "";
+  width: 80px;
+  height: 5px;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: var(--border-radius-p);
+  background: var(--secondary-color);
+}
+
+.sobre-nos-section .sobre-nos-detalhes .sobre-titulo {
+  padding: 0;
+}
+
+.sobre-nos-section .sobre-nos-detalhes {
+  max-width: 50%;
+}
+
+.sobre-nos-section .sobre-nos-detalhes .text-sobre {
+  line-height: 30px;
+  margin: 50px 0 30px;
+  text-align: center;
+  font-size: var(--font-size-m);
+}
+
+.sobre-nos-section .social-media-links {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.sobre-nos-section .social-media-links .social-link {
+  color: var(--primary-color);
+  font-size: var(--font-size-g);
+  transition: 0.3s ease;
+}
+
+.sobre-nos-section .social-media-links .social-link:hover {
+  color: var(--secondary-color);
+}
+
 /*Responsividade com o tamanho de tela máxima de 900px*/
 @media screen and (max-width: 900px) {
   :root {
@@ -177,16 +246,22 @@ header .navbar {
  - Cria um 'overlay' (sobreposição) que escurece e desfoca o restante da página
  - quando o menu mobile está aberto (quando a classe 'show-mobile-menu' está no <body>).
 */
-  body.show-mobile-menu header::before{
+  body.show-mobile-menu header::before {
     content: ""; /* Necessário para renderizar */
     position: fixed; /* Fica fixo na tela, não rola com o conteúdo */
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    backdrop-filter: blur(5px); /* Desfoca o conteúdo que está atrás deste overlay */
-    background: rgba(0,0,0,0.3); /* Fundo preto com 30% de transparência para escurecer a página */
-
+    backdrop-filter: blur(
+      5px
+    ); /* Desfoca o conteúdo que está atrás deste overlay */
+    background: rgba(
+      0,
+      0,
+      0,
+      0.3
+    ); /* Fundo preto com 30% de transparência para escurecer a página */
   }
 
   /* * Pseudo-classe :where():
@@ -212,6 +287,7 @@ header .navbar {
     background: none;
   }
 
+
   /*adiciona uma barra vertical na lateral esquerda, essa barra é branca*/
   .navbar .nav-menu {
     display: block;
@@ -229,12 +305,11 @@ header .navbar {
   }
 
   /*Quando a classe show-mobile-menu for adicionada ao body, o menu desliza para dentro da tela*/
-body.show-mobile-menu .navbar .nav-menu {
+  body.show-mobile-menu .navbar .nav-menu {
     left: 0;
-
   }
 
-    .navbar .nav-menu .nav-links {
+  .navbar .nav-menu .nav-links {
     color: var(--dark-color);
     display: block;
     margin-top: 17px;
@@ -251,13 +326,13 @@ body.show-mobile-menu .navbar .nav-menu {
     padding: 30px 20px 20px;
   }
 
-  .primeira-section .img-destaque{
+  .primeira-section .img-destaque {
     max-width: 270px;
     margin-right: 0;
   }
 
   /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
-  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque){
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque), .sobre-nos-section .sobre-nos-detalhes {
     max-width: 100%;
   }
 
@@ -265,6 +340,16 @@ body.show-mobile-menu .navbar .nav-menu {
     justify-content: center;
   }
 
+  /*Responsividade Sobre Nós*/
+  .sobre-nos-section .section-content{
+    gap: 70px;
+    flex-direction: column;
+  }
+
+   .sobre-nos-section .img-sobre-nos-sec .sobre-nos-img{
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    aspect-ratio: 1; /* A largura e a altura do elemento devem ser iguais. Efeito: O elemento sempre será renderizado como um quadrado perfeito. Se a largura for $200px, a altura será forçadamente $200px$. Se a largura for $50vw (50% da largura da tela), a altura também será $50vw.*/
+   } 
 }
-
-
