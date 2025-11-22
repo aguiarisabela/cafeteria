@@ -184,7 +184,7 @@ header .navbar {
   border-radius: var(--border-radius-circulo);
 }
 
-.sobre-titulo {
+.section-titulo {
   text-align: center;
   padding: 60px 0 100px;
   text-transform: uppercase;
@@ -192,7 +192,7 @@ header .navbar {
 }
 
 /* Cria um pseudoelemento (uma linha decorativa) logo abaixo do título */
-.sobre-titulo::after {
+.section-titulo::after {
   content: "";
   width: 80px;
   height: 5px;
@@ -232,6 +232,134 @@ header .navbar {
 .sobre-nos-section .social-media-links .social-link:hover {
   color: var(--secondary-color);
 }
+
+/*Menu estilização*/
+.cardapio-section {
+  color: var(--light-color);
+  background-color: var(--dark-color);
+  padding: 50px 0 100px;
+}
+
+.cardapio-section .cardapio-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+}
+
+/*
+- calc(...): É uma função CSS que permite realizar cálculos matemáticos para definir valores de propriedades.
+
+- 100% / 3: Calcula o espaço que seria necessário para que três itens se encaixassem perfeitamente na largura total do contêiner (.cardapio-list). Isso resulta em 33.333\% da largura total.
+
+- - 280px: Subtrai 280 pixels dessa largura calculada.
+
+O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-item) tenha uma largura que permita que três itens sejam exibidos lado a lado dentro do contêiner pai, levando em consideração um espaço adicional (110 pixels) que pode ser usado para margens, espaçamentos ou outros elementos visuais entre os itens.
+
+*/
+.cardapio-section .cardapio-list .cardapio-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: calc(100% / 3 - 280px);
+}
+
+.cardapio-section .cardapio-list .cardapio-item .cardapio-img {
+  max-width: 83%;
+  aspect-ratio: 1;
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.cardapio-section .cardapio-list .cardapio-item .text-cardapio{
+  font-size: var(--font-size-m);
+}
+
+.cardapio-section .cardapio-list .cardapio-item .name-menu{
+  margin: 12px 0;
+  font-size: var(--font-size-g);
+  font-weight: 600;
+}
+
+/*Responsividade com o tamanho de tela máxima de 1024px*/
+@media screen and (max-width: 1024px){
+
+  :root {
+    --font-size-p: 0.85rem;
+    --font-size-m: 1rem;
+    --font-size-g: 1.3rem;
+    --font-size-gg: 1.5rem;
+    --font-size-xgg: 1.8rem;
+  }
+
+
+  /*Responsividade Nav*/
+
+header .navbar {
+    padding: 20px 5%;
+  }
+
+  .navbar .nav-menu {
+    gap: 5px;
+  }
+
+    .navbar .nav-menu .nav-links{
+      font-size: var(--font-size-p);
+      justify-content: center;
+    }
+    
+
+   /*responsividade da section de destaques*/
+
+  .primeira-section .section-conteudo {
+    gap: 50px;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px 20px;
+  }
+
+  .primeira-section .img-destaque {
+    display: flex;
+    justify-content: center;
+    max-width: 270px;
+    margin-right: 0;
+
+  }
+
+  /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque),
+  .sobre-nos-section .sobre-nos-detalhes {
+    max-width: 100%;
+  }
+
+  .primeira-section .sec-destaque .buttons {
+    justify-content: center;
+  }
+
+  /*Responsividade Sobre Nós*/
+  .sobre-nos-section .section-content {
+    gap: 70px;
+    flex-direction: column;
+  }
+
+  .sobre-nos-section .img-sobre-nos-sec .sobre-nos-img {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    aspect-ratio: 1; /* A largura e a altura do elemento devem ser iguais. Efeito: O elemento sempre será renderizado como um quadrado perfeito. Se a largura for $200px, a altura será forçadamente $200px$. Se a largura for $50vw (50% da largura da tela), a altura também será $50vw.*/
+  }
+
+  .cardapio-section .cardapio-list .cardapio-item{
+      width: calc(100% / 2 - 50px);
+  }
+
+  .cardapio-section .cardapio-list{
+    gap: 60px;
+  }
+}
+
 
 /*Responsividade com o tamanho de tela máxima de 900px*/
 @media screen and (max-width: 900px) {
@@ -287,7 +415,6 @@ header .navbar {
     background: none;
   }
 
-
   /*adiciona uma barra vertical na lateral esquerda, essa barra é branca*/
   .navbar .nav-menu {
     display: block;
@@ -332,7 +459,8 @@ header .navbar {
   }
 
   /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
-  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque), .sobre-nos-section .sobre-nos-detalhes {
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque),
+  .sobre-nos-section .sobre-nos-detalhes {
     max-width: 100%;
   }
 
@@ -341,15 +469,49 @@ header .navbar {
   }
 
   /*Responsividade Sobre Nós*/
-  .sobre-nos-section .section-content{
+  .sobre-nos-section .section-content {
     gap: 70px;
     flex-direction: column;
   }
 
-   .sobre-nos-section .img-sobre-nos-sec .sobre-nos-img{
+  .sobre-nos-section .img-sobre-nos-sec .sobre-nos-img {
     width: 100%;
     height: 100%;
     max-width: 250px;
     aspect-ratio: 1; /* A largura e a altura do elemento devem ser iguais. Efeito: O elemento sempre será renderizado como um quadrado perfeito. Se a largura for $200px, a altura será forçadamente $200px$. Se a largura for $50vw (50% da largura da tela), a altura também será $50vw.*/
-   } 
+  }
+
+  .cardapio-section .cardapio-list{
+    gap: 30px;
+  }
+
+    .cardapio-section .cardapio-list .cardapio-item{
+      width: calc(100% / 2 - 30px);
+  }
+
+  .cardapio-section .cardapio-list .cardapio-item .cardapio-img{
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --font-size-m: 0.9rem;
+    --font-size-g: 1.1rem;
+    --font-size-gg: 1.3rem;
+    --font-size-xgg: 1.5rem;
+  }
+
+  .cardapio-section .cardapio-list .cardapio-item{
+      width: 100%;
+  }
+
+  .cardapio-section .cardapio-list{
+    gap: 60px;
+  }
+
+  .cardapio-section .cardapio-list .cardapio-item .text-cardapio{
+    font-size: var(--font-size-m);
+  width: 90%;
+}
 }
