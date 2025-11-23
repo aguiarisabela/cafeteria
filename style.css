@@ -283,6 +283,112 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
   font-weight: 600;
 }
 
+/*Depoimentos estilização*/
+
+.depoimentos-section{
+  position: relative;
+  width: 100%;
+  padding: 50px 0 100px;
+  background-color: var(--light-pink-color);
+  scroll-snap-align: start;
+}
+
+.depoimentos-section .fa-solid{
+  height: 50px;
+  width: 50px;
+  color: var(--secondary-color);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: var(--font-size-g);
+}
+
+.depoimentos-section .fa-solid:first-child{
+  left: -22px
+}
+
+.depoimentos-section .fa-solid:last-child{
+  right: 0;
+}
+
+.slider-container .depoimentos-list{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3 - 12px));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+}
+
+.depoimentos-list::-webkit-scrollbar{
+  display: none;
+}
+
+.depoimentos-section .depoimentos{
+  display: flex;
+  padding: 35px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.depoimentos-section .depoimentos .user-img{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 50px;
+  border-radius: var(--border-radius-circulo);
+}
+
+.depoimentos-section .no-transition{
+  scroll-behavior: auto;
+}
+
+.depoimentos-section .depoimentos .name{
+  margin-bottom: 16px;
+  font-size: var(--font-size-m);
+}
+
+.depoimentos-section .depoimentos .feedback{
+  line-height: 25px;
+}
+
+.depoimentos-list.dragging .depoimentos{
+  cursor: grab;
+  user-select: none;
+}
+
+.depoimentos-list.dragging{
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
+}
+
+/*Responsividade com o tamanho de tela máxima de 1280px*/
+@media screen and (max-width: 1280px){
+
+  .cardapio-section .cardapio-list .cardapio-item{
+      width: calc(100% / 4 - 80px);
+  }
+
+  .cardapio-section .cardapio-list{
+    gap: 80px;
+  }
+}
+
+/*Responsividade com o tamanho de tela máxima de 1114px*/
+@media screen and (max-width: 1114px) {
+  
+  .cardapio-section .cardapio-list .cardapio-item{
+      width: calc(100% / 4 - 80px);
+  }
+
+  .cardapio-section .cardapio-list{
+    gap: 80px;
+  }
+}
+
 /*Responsividade com o tamanho de tela máxima de 1024px*/
 @media screen and (max-width: 1024px){
 
@@ -356,10 +462,9 @@ header .navbar {
   }
 
   .cardapio-section .cardapio-list{
-    gap: 60px;
+    gap: 50px;
   }
 }
-
 
 /*Responsividade com o tamanho de tela máxima de 900px*/
 @media screen and (max-width: 900px) {
@@ -492,6 +597,12 @@ header .navbar {
   .cardapio-section .cardapio-list .cardapio-item .cardapio-img{
     max-width: 200px;
   }
+
+  /*Responsividade corrossel de depoimentos*/
+  .slider-container .depoimentos-list{
+    grid-auto-columns: calc((100% / 2 - 9px));
+}
+
 }
 
 @media screen and (max-width: 640px) {
@@ -514,4 +625,10 @@ header .navbar {
     font-size: var(--font-size-m);
   width: 90%;
 }
+
+  /*Responsividade corrossel de depoimentos*/
+  .slider-container .depoimentos-list{
+    grid-auto-columns: 100%;
+}
+
 }

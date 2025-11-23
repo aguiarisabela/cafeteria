@@ -29,3 +29,7 @@ menuCloseButton.addEventListener('click', function () {
         -  Como o menu já estava aberto (ou seja, a classe 'show-mobile-menu' estava presente), o toggle() REMOVE essa classe.
         - Assim, o menu é fechado. */
 });
+
+
+
+
