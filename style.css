@@ -273,11 +273,11 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
   object-fit: contain;
 }
 
-.cardapio-section .cardapio-list .cardapio-item .text-cardapio{
+.cardapio-section .cardapio-list .cardapio-item .text-cardapio {
   font-size: var(--font-size-m);
 }
 
-.cardapio-section .cardapio-list .cardapio-item .name-menu{
+.cardapio-section .cardapio-list .cardapio-item .name-menu {
   margin: 12px 0;
   font-size: var(--font-size-g);
   font-weight: 600;
@@ -285,7 +285,7 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
 
 /*Depoimentos estilização*/
 
-.depoimentos-section{
+.depoimentos-section {
   position: relative;
   width: 100%;
   padding: 50px 0 100px;
@@ -293,7 +293,7 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
   scroll-snap-align: start;
 }
 
-.depoimentos-section .fa-solid{
+.depoimentos-section .fa-solid {
   height: 50px;
   width: 50px;
   color: var(--secondary-color);
@@ -303,15 +303,15 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
   font-size: var(--font-size-g);
 }
 
-.depoimentos-section .fa-solid:first-child{
-  left: -22px
+.depoimentos-section .fa-solid:first-child {
+  left: -22px;
 }
 
-.depoimentos-section .fa-solid:last-child{
+.depoimentos-section .fa-solid:last-child {
   right: 0;
 }
 
-.slider-container .depoimentos-list{
+.slider-container .depoimentos-list {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% / 3 - 12px));
@@ -321,11 +321,11 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
   scrollbar-width: 0;
 }
 
-.depoimentos-list::-webkit-scrollbar{
+.depoimentos-list::-webkit-scrollbar {
   display: none;
 }
 
-.depoimentos-section .depoimentos{
+.depoimentos-section .depoimentos {
   display: flex;
   padding: 35px;
   text-align: center;
@@ -334,7 +334,7 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
   cursor: pointer;
 }
 
-.depoimentos-section .depoimentos .user-img{
+.depoimentos-section .depoimentos .user-img {
   width: 180px;
   height: 180px;
   object-fit: cover;
@@ -342,56 +342,132 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
   border-radius: var(--border-radius-circulo);
 }
 
-.depoimentos-section .no-transition{
+.depoimentos-section .no-transition {
   scroll-behavior: auto;
 }
 
-.depoimentos-section .depoimentos .name{
+.depoimentos-section .depoimentos .name {
   margin-bottom: 16px;
   font-size: var(--font-size-m);
 }
 
-.depoimentos-section .depoimentos .feedback{
+.depoimentos-section .depoimentos .feedback {
   line-height: 25px;
 }
 
-.depoimentos-list.dragging .depoimentos{
+.depoimentos-list.dragging .depoimentos {
   cursor: grab;
   user-select: none;
 }
 
-.depoimentos-list.dragging{
+.depoimentos-list.dragging {
   scroll-behavior: smooth;
   scroll-snap-type: none;
 }
 
+/*Estilizaçao Galeria*/
+.galeria-section {
+  padding: 50px 60px;
+}
+
+.galeria-section .galeria-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.galeria-section .galeria-list .galeria-item {
+  overflow: hidden;
+  width: calc(100% / 3 - 32px);
+  transition: 0.3s ease;
+}
+
+.galeria-section .galeria-item .galeria-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  cursor: zoom-in;
+    border-radius: var(--border-radius-p);
+}
+
+.galeria-section .galeria-item:hover .galeria-img {
+  transform: scale(1.3);
+}
+
+/*Responsividade com o tamanho de tela máxima de 1400px*/
+@media screen and (max-width: 1400px) {
+ /*responsividade da section de destaques*/
+
+  .primeira-section .section-conteudo {
+    gap: 50px;
+
+    padding: 30px 20px 20px;
+  }
+
+  .primeira-section .img-destaque {
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    margin-right: 0;
+  }
+
+  /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque),
+  .sobre-nos-section .sobre-nos-detalhes {
+    max-width: 100%;
+  }
+
+  .primeira-section .sec-destaque .buttons {
+    justify-content: center;
+  }
+
+  .cardapio-section .cardapio-list .cardapio-item {
+    width: calc(100% / 4 - 80px);
+  }
+
+  .cardapio-section .cardapio-list {
+    gap: 80px;
+  }
+}
+
 /*Responsividade com o tamanho de tela máxima de 1280px*/
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1280px) {
+ /*responsividade da section de destaques*/
 
-  .cardapio-section .cardapio-list .cardapio-item{
-      width: calc(100% / 4 - 80px);
+  .primeira-section .section-conteudo {
+    gap: 50px;
+
+    padding: 30px 20px 20px;
   }
 
-  .cardapio-section .cardapio-list{
+  .primeira-section .img-destaque {
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    margin-right: 0;
+  }
+
+  /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque),
+  .sobre-nos-section .sobre-nos-detalhes {
+    max-width: 100%;
+  }
+
+  .primeira-section .sec-destaque .buttons {
+    justify-content: center;
+  }
+
+  .cardapio-section .cardapio-list .cardapio-item {
+    width: calc(100% / 4 - 80px);
+  }
+
+  .cardapio-section .cardapio-list {
     gap: 80px;
   }
 }
 
-/*Responsividade com o tamanho de tela máxima de 1114px*/
-@media screen and (max-width: 1114px) {
-  
-  .cardapio-section .cardapio-list .cardapio-item{
-      width: calc(100% / 4 - 80px);
-  }
-
-  .cardapio-section .cardapio-list{
-    gap: 80px;
-  }
-}
-
-/*Responsividade com o tamanho de tela máxima de 1024px*/
-@media screen and (max-width: 1024px){
-
+/*Responsividade com o tamanho de tela máxima de 1240px*/
+@media screen and (max-width: 1240px) {
   :root {
     --font-size-p: 0.85rem;
     --font-size-m: 1rem;
@@ -400,10 +476,9 @@ O objetivo dessa expressão é garantir que cada item do cardápio (.cardapio-it
     --font-size-xgg: 1.8rem;
   }
 
-
   /*Responsividade Nav*/
 
-header .navbar {
+  header .navbar {
     padding: 20px 5%;
   }
 
@@ -411,13 +486,63 @@ header .navbar {
     gap: 5px;
   }
 
-    .navbar .nav-menu .nav-links{
-      font-size: var(--font-size-p);
-      justify-content: center;
-    }
-    
+  .navbar .nav-menu .nav-links {
+    font-size: var(--font-size-g);
+    justify-content: center;
+  }
 
-   /*responsividade da section de destaques*/
+  /*responsividade da section de destaques*/
+
+  .primeira-section .section-conteudo {
+    gap: 50px;
+
+    padding: 30px 20px 20px;
+  }
+
+  .primeira-section .img-destaque {
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    margin-right: 0;
+  }
+
+  /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque),
+  .sobre-nos-section .sobre-nos-detalhes {
+    max-width: 100%;
+  }
+
+  .primeira-section .sec-destaque .buttons {
+    justify-content: center;
+  }
+}
+
+/*Responsividade com o tamanho de tela máxima de 1114px*/
+@media screen and (max-width: 1120px) {
+  :root {
+    --font-size-p: 0.85rem;
+    --font-size-m: 1rem;
+    --font-size-g: 1.3rem;
+    --font-size-gg: 1.5rem;
+    --font-size-xgg: 1.8rem;
+  }
+
+  /*Responsividade Nav*/
+
+  header .navbar {
+    padding: 20px 5%;
+  }
+
+  .navbar .nav-menu {
+    gap: 5px;
+  }
+
+  .navbar .nav-menu .nav-links {
+    font-size: var(--font-size-m);
+    justify-content: center;
+  }
+
+  /*responsividade da section de destaques*/
 
   .primeira-section .section-conteudo {
     gap: 50px;
@@ -431,7 +556,6 @@ header .navbar {
     justify-content: center;
     max-width: 270px;
     margin-right: 0;
-
   }
 
   /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
@@ -457,11 +581,84 @@ header .navbar {
     aspect-ratio: 1; /* A largura e a altura do elemento devem ser iguais. Efeito: O elemento sempre será renderizado como um quadrado perfeito. Se a largura for $200px, a altura será forçadamente $200px$. Se a largura for $50vw (50% da largura da tela), a altura também será $50vw.*/
   }
 
-  .cardapio-section .cardapio-list .cardapio-item{
-      width: calc(100% / 2 - 50px);
+  .cardapio-section .cardapio-list .cardapio-item {
+    width: calc(100% / 4 - 80px);
   }
 
-  .cardapio-section .cardapio-list{
+  .cardapio-section .cardapio-list {
+    gap: 80px;
+  }
+}
+
+/*Responsividade com o tamanho de tela máxima de 1024px*/
+@media screen and (max-width: 1024px) {
+  :root {
+    --font-size-p: 0.85rem;
+    --font-size-m: 1rem;
+    --font-size-g: 1.3rem;
+    --font-size-gg: 1.5rem;
+    --font-size-xgg: 1.8rem;
+  }
+
+  /*Responsividade Nav*/
+
+  header .navbar {
+    padding: 20px 5%;
+  }
+
+  .navbar .nav-menu {
+    gap: 5px;
+  }
+
+  .navbar .nav-menu .nav-links {
+    font-size: var(--font-size-p);
+    justify-content: center;
+  }
+
+  /*responsividade da section de destaques*/
+
+  .primeira-section .section-conteudo {
+    gap: 50px;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px 20px;
+  }
+
+  .primeira-section .img-destaque {
+    display: flex;
+    justify-content: center;
+    max-width: 270px;
+    margin-right: 0;
+  }
+
+  /*O seletor :is() é uma pseudo-classe funcional em CSS que serve para agrupar seletores e simplificar o código, permitindo que você aplique os mesmos estilos a múltiplos elementos de forma concisa.*/
+  .primeira-section .sec-destaque :is(.subtitulo-destaque, .decricao-destaque),
+  .sobre-nos-section .sobre-nos-detalhes {
+    max-width: 100%;
+  }
+
+  .primeira-section .sec-destaque .buttons {
+    justify-content: center;
+  }
+
+  /*Responsividade Sobre Nós*/
+  .sobre-nos-section .section-content {
+    gap: 70px;
+    flex-direction: column;
+  }
+
+  .sobre-nos-section .img-sobre-nos-sec .sobre-nos-img {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    aspect-ratio: 1; /* A largura e a altura do elemento devem ser iguais. Efeito: O elemento sempre será renderizado como um quadrado perfeito. Se a largura for $200px, a altura será forçadamente $200px$. Se a largura for $50vw (50% da largura da tela), a altura também será $50vw.*/
+  }
+
+  .cardapio-section .cardapio-list .cardapio-item {
+    width: calc(100% / 2 - 50px);
+  }
+
+  .cardapio-section .cardapio-list {
     gap: 50px;
   }
 }
@@ -586,23 +783,30 @@ header .navbar {
     aspect-ratio: 1; /* A largura e a altura do elemento devem ser iguais. Efeito: O elemento sempre será renderizado como um quadrado perfeito. Se a largura for $200px, a altura será forçadamente $200px$. Se a largura for $50vw (50% da largura da tela), a altura também será $50vw.*/
   }
 
-  .cardapio-section .cardapio-list{
+  .cardapio-section .cardapio-list {
     gap: 30px;
   }
 
-    .cardapio-section .cardapio-list .cardapio-item{
-      width: calc(100% / 2 - 30px);
+  .cardapio-section .cardapio-list .cardapio-item {
+    width: calc(100% / 2 - 30px);
   }
 
-  .cardapio-section .cardapio-list .cardapio-item .cardapio-img{
+  .cardapio-section .cardapio-list .cardapio-item .cardapio-img {
     max-width: 200px;
   }
 
   /*Responsividade corrossel de depoimentos*/
-  .slider-container .depoimentos-list{
+  .slider-container .depoimentos-list {
     grid-auto-columns: calc((100% / 2 - 9px));
-}
+  }
 
+    .galeria-section .galeria-list{
+      gap: 30px;
+    }
+
+  .galeria-section .galeria-list .galeria-item {
+    width: calc(100% / 2 - 30px);
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -613,22 +817,21 @@ header .navbar {
     --font-size-xgg: 1.5rem;
   }
 
-  .cardapio-section .cardapio-list .cardapio-item{
-      width: 100%;
+  .cardapio-section .cardapio-list .cardapio-item,   .galeria-section .galeria-list .galeria-item {
+    width: 100%;
   }
 
-  .cardapio-section .cardapio-list{
+  .cardapio-section .cardapio-list {
     gap: 60px;
   }
 
-  .cardapio-section .cardapio-list .cardapio-item .text-cardapio{
+  .cardapio-section .cardapio-list .cardapio-item .text-cardapio {
     font-size: var(--font-size-m);
-  width: 90%;
-}
+    width: 90%;
+  }
 
   /*Responsividade corrossel de depoimentos*/
-  .slider-container .depoimentos-list{
+  .slider-container .depoimentos-list {
     grid-auto-columns: 100%;
-}
-
+  }
 }
