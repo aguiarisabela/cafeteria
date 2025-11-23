@@ -1,11 +1,11 @@
-const menuOpenButton = document.querySelector('#menu-open-button'); //Seleciona o botão de abrir o menu.
-const menuCloseButton = document.querySelector('#menu-close-button'); // Seleciona o botão de fechar o menu.
-
+const navLinks = document.querySelectorAll(".nav-menu .nav-links"); //selecionando a classe
+const menuOpenButton = document.querySelector("#menu-open-button"); //Seleciona o botão de abrir o menu.
+const menuCloseButton = document.querySelector("#menu-close-button"); // Seleciona o botão de fechar o menu.
 
 //Adiciona um 'Event Listener' (Ouvinte de Eventos) ao botão de abrir.
-menuOpenButton.addEventListener('click', function () { 
-    document.body.classList.toggle('show-mobile-menu');
-    /* document.body refere-se à tag <body> do documento HTML.
+menuOpenButton.addEventListener("click", function () {
+  document.body.classList.toggle("show-mobile-menu");
+  /* document.body refere-se à tag <body> do documento HTML.
        classList é uma propriedade que retorna uma coleção de classes CSS do elemento.
        toggle('show-mobile-menu') faz duas coisas:
             1. Se a classe 'show-mobile-menu' NÃO estiver presente no <body>, ele a ADICIONA.
@@ -15,9 +15,9 @@ menuOpenButton.addEventListener('click', function () {
 });
 
 //Adiciona um 'Event Listener' (Ouvinte de Eventos) ao botão de fechar.
-menuCloseButton.addEventListener('click', function () { 
-    menuOpenButton.click()
-    /* 1. O que está acontecendo?
+menuCloseButton.addEventListener("click", function () {
+  menuOpenButton.click();
+  /* 1. O que está acontecendo?
         - Quando o usuário clica no botão de fechar (menuCloseButton), o código não esconde o menu diretamente. Em vez disso, ele faz o seguinte: Chama o método .click() no botão de abrir (menuOpenButton).
 
     2. Qual é o efeito?
@@ -30,6 +30,9 @@ menuCloseButton.addEventListener('click', function () {
         - Assim, o menu é fechado. */
 });
 
-
-
-
+//quando um link é clicado, o menu se fecha e o usuário é direcionado ao tópico.
+navLinks.forEach(function (link) {
+  link.addEventListener("click", function () {
+    menuOpenButton.click();
+  });
+});

@@ -20,22 +20,22 @@
             <button id="menu-close-button" class="fas fa-times"></button>
 
             <li class="nav-items">
-                <a href="#" class="nav-links">Início</a>
+                <a href="#inicio" class="nav-links">Início</a>
             </li>
             <li class="nav-items">
-                <a class="nav-links" href="#">Sobre nós</a>
+                <a class="nav-links" href="#sobre">Sobre nós</a>
             </li>
             <li class="nav-items">
-                <a class="nav-links" href="#">Cardápio</a>
+                <a class="nav-links" href="#menu">Cardápio</a>
             </li>
             <li class="nav-items">
-                <a class="nav-links" href="#">Depoimentos</a>
+                <a class="nav-links" href="#dep">Depoimentos</a>
             </li>
             <li class="nav-items">
-                <a class="nav-links" href="#">Galeria</a>
+                <a class="nav-links" href="#galeria">Galeria</a>
             </li>
             <li class="nav-items">
-                <a class="nav-links" href="#">Contato</a>
+                <a class="nav-links" href="#contato">Contato</a>
             </li>
         </ul>
 
@@ -46,7 +46,7 @@
     </header>
     <main>
         <!--Section de destaque-->
-        <section class="primeira-section">
+        <section class="primeira-section" id="inicio">
             <div class="section-conteudo">
                 <div class="sec-destaque">
                     <h2 class="title-destaque">
@@ -70,7 +70,7 @@
         </section>
 
         <!--Section de Sobre Nós-->
-        <section class="sobre-nos-section">
+        <section class="sobre-nos-section" id="sobre">
             <div class="section-content">
                 <div class="img-sobre-nos-sec">
                     <img src="/assets/img-sobre-nos.jpg" alt="Mulher tomando café" class="sobre-nos-img">
@@ -90,7 +90,7 @@
         </section>
 
         <!--Section Cardápio-->
-        <section class="cardapio-section">
+        <section class="cardapio-section" id="menu"> 
             <h2 class="section-titulo">Nosso Menu</h2>
             <div class="section-content">
                 <ul class="cardapio-list">
@@ -155,7 +155,7 @@
         </section>
 
         <!--Section Depoimentos-->
-        <section class="depoimentos-section">
+        <section class="depoimentos-section" id="dep">
             <h2 class="section-titulo">Depoimentos</h2>
             <i id="left" class="fa-solid fa-angle-left"></i>
             <div class="section-contet">
@@ -226,7 +226,7 @@
         </section>
 
         <!--Section Galeria-->
-        <section class="galeria-section">
+        <section class="galeria-section" id="galeria">
             <h2 class="section-titulo">Galeria</h2>
             <div class="section-content">
                 <ul class="galeria-list">
@@ -252,6 +252,65 @@
             </div>
         </section>
 
+        <!--Section Contato-->
+        <section class="contato-section" id="contato">
+            <h2 class="section-titulo">
+                Contate-nos
+            </h2>
+            <div class="section-content">
+                <ul class="contato-info-list">
+                    <li class="contato-info">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <p>Rua Sudeste do Brasil, 0001 - Brasil - MG.</p>
+                    </li>
+                    <li class="contato-info">
+                        <i class="fa-regular fa-envelope"></i>
+                        <p>aaguiarisabela@gmail.com</p>
+                    </li>
+                    <li class="contato-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>(00) 9 1234-5678</p>
+                    </li>
+                    <li class="contato-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Seg - Sáb: 07:00 - 16:00</p>
+                    </li>
+                    <li class="contato-info">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Domingo: 07:00 - 13:00</p>
+                    </li>
+                    <li class="contato-info">
+                        <i class="fa-solid fa-globe"></i>
+                        <p>www.bomcafe.com.br</p>
+                    </li>
+                </ul>
+
+                <form action="#" class="contato-form">                  <input type="text" placeholder="Seu nome" class="form-input" required>
+                <input type="email" placeholder="Seu email" class="form-input" required>
+                <textarea  placeholder="Digite aqui" class="form-input" required></textarea>
+                <button class="submit-button">Enviar</button>
+                </form>
+
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer class="footer-section">
+            <div class="section-content">
+                <p class="copy-texto">&copy; 2025 Bom Café | Desenvolvido por Isabela Castro Silva de Aguiar.</p>
+            <div class="social-media-links">
+                    <a href="https://github.com/aguiarisabela" class="social-link"><i class="fa-brands fa-github"></i>
+                    <a href="https://www.instagram.com/aguiarisabela_/" class="social-link"><i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.linkedin.com/in/isabela-aguiarr/" class="social-link"><i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+                <p class="politica-texto">
+                    <a href="#" class="plitica-link">Política de Privacidade</a>
+                    <span class="separador">|</span>
+                    <a href="#" class="plitica-link">Política de Reembolso</a>
+                </p>
+            </div>
+        </footer>
     </main>
 
     <script src="script.js"></script>
