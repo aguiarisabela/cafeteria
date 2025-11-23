@@ -6,6 +6,10 @@
 
 Um site moderno e responsivo para uma cafeteria fictícia, desenvolvido com HTML, CSS e JavaScript puro. O projeto apresenta um design acolhedor e funcional, perfeito para estabelecimentos que buscam presença digital.
 
+# 🌐 Deploy
+O projeto está disponível online e pode ser acessado através do link:
+🔗 **[☕Bom Café](https://cafeteria-bom-cafe.vercel.app/)**
+
 ## 📋 Sobre o Projeto
 
 O **Bom Café** é um website completo que simula a presença online de uma cafeteria, oferecendo uma experiência visual agradável e navegação intuitiva. O site foi desenvolvido com foco em responsividade e acessibilidade, garantindo uma ótima experiência em dispositivos móveis e desktops.
