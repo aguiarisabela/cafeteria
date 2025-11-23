@@ -108,7 +108,7 @@ O site é totalmente responsivo com breakpoints otimizados para:
 
 ## 📚 Documentação Adicional
 
-Para entender em detalhes como funciona o carrossel de depoimentos com scroll infinito, arrasto e autoplay, consulte a **[Documentação do Carrossel]((https://drive.google.com/file/d/1SMfbPlVKtPxzWDEBjIU_1mkq1CN7mQNv/view?usp=sharing))**.
+Para entender em detalhes como funciona o carrossel de depoimentos com scroll infinito, arrasto e autoplay, consulte a **[Documentação do Carrossel](https://drive.google.com/file/d/1SMfbPlVKtPxzWDEBjIU_1mkq1CN7mQNv/view?usp=sharing)**.
 
 ## 📄 Licença
 
